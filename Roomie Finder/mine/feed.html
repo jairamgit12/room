@@ -6,6 +6,7 @@
     <title>Document</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         html, body {
             height: 100%;
@@ -26,7 +27,7 @@
 
         #carouselExampleIndicators .carousel-inner .carousel-item img {
             max-width: 100%;
-            height: 600px;
+            height: 500px;
             object-fit: cover;
         }
 
@@ -80,9 +81,11 @@
             justify-content: center;
             font-size: 18px;
         }
+
         .button-group-2 {
             position: absolute;
-            bottom: -50px; /* Adjust the distance from the bottom */
+            bottom: -55px; /* Adjust the distance from the bottom */
+            max-width: 750px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -90,6 +93,27 @@
 
         .button-group-2 button {
             margin: 0 5px; /* Adjust the space between buttons */
+            min-width: 80px; /* Ensure minimum width for better visibility */
+            font-size: 16px; /* Reduce font size for better visibility */
+        }
+
+        /* Remove padding for close button */
+        .modal-header .close {
+            padding: 0;
+        }
+
+        @media (max-width: 768px) {
+            .button-group-2 {
+                position: relative;
+                bottom: auto;
+                margin-top: 10px; /* Adjust the distance from the top */
+            }
+
+            .button-group-2 button {
+                width: 60px; /* Reduce button width for smaller screens */
+                height: 40px; /* Maintain button height */
+                font-size: 14px; /* Reduce font size for smaller screens */
+            }
         }
     </style>
 </head>
@@ -103,13 +127,13 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <a href="https://example.com/page1"><img class="d-block w-100" src="https://via.placeholder.com/800x400?text=Slide+1" alt="First slide"></a>
+                <a href=""><img class="d-block w-100" src="C:\Users\vijay.vegesna\Desktop\Roomie Finder\mine\1.jpg" alt="First slide"></a>
               </div>
               <div class="carousel-item">
-                <a href="https://example.com/page2"><img class="d-block w-100" src="https://via.placeholder.com/800x400?text=Slide+2" alt="Second slide"></a>
+                <a href=""><img class="d-block w-100" src="C:\Users\vijay.vegesna\Desktop\Roomie Finder\mine\2.jpg" alt="Second slide"></a>
               </div>
               <div class="carousel-item">
-                <a href="https://example.com/page3"><img class="d-block w-100" src="https://via.placeholder.com/800x400?text=Slide+3" alt="Third slide"></a>
+                <a href=""><img class="d-block w-100" src="C:\Users\vijay.vegesna\Desktop\Roomie Finder\mine\3.jpeg" alt="Third slide"></a>
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -122,17 +146,38 @@
             </a>
           </div>
           <div class="button-group">
-            <button class="btn btn-primary"><i class="fas fa-comment"></i></button>
-            <button class="btn btn-primary"><i class="fas fa-heart"></i></button>
+            <button class="btn btn-primary info-btn" data-toggle="modal" data-target="#infoModal"><i class="fas fa-info"></i></button>
             <button class="btn btn-primary"><i class="fas fa-envelope"></i></button>
           </div>
-          <div class="button-group-2">
-            <button class="btn btn-primary" id="prevButton"><i class="fas fa-chevron-left"></i> Prev</button>
-            <button class="btn btn-primary" id="nextButton">Next <i class="fas fa-chevron-right"></i></button>
-        </div>
+
+          <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoModalLabel">Description</h5>
+                        <!-- Remove padding for close button -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Description content goes here -->
+                        <p>This is the description of the image.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div> 
     </div>
+    <div class="button-group-2">
+      <button class="btn btn-primary" id="prevButton"><i class="fas fa-chevron-left"></i> Prev</button>
+      <button class="btn btn-primary" id="nextButton">Next <i class="fas fa-chevron-right"></i></button>
+  </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
 </body>
 </html>
+
+

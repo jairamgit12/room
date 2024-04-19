@@ -10,7 +10,7 @@
     <div id="center">
         <div id="container">
             <h3>Tell us about yourself</h3>
-            <label>What are your Hobbies?</label>
+            <label>What are your hobbies and interests?</label>
             <input type="text">
             <label>Can you cook?</label>
             <label>
@@ -28,7 +28,12 @@
                 <input type="radio" name="deet" value="employed" id="emp" />
                 Employed
             </label>
-            <label>which </label>
+            <label>What do you do for work or study? </label>
+            <input type="text">
+            <label>What's something you're passionate about?</label>
+            <input type="text">
+            <label>Do you have any hidden talents or unusual skills?</label>
+            <input type="text">
             <h3>Room Requirements</h3>
             <label for="">Where do you want your room?</label><input type="text">
             <label for="">How many bedrooms?</label><input type="number" name="" id="">
@@ -48,11 +53,16 @@
                 <input type="radio" name="mate" value="employed" />
                 Employed
             </label>
+<br>
+            <button type="submit" id="bark">Submit</button>
             
         </div>
     </div>
     <script>
-        document.getElementById("stu")
+        document.getElementById('bark').onclick=function (){
+        alert("succesfully posted")
+        window.open('feed.html', '_self')
+    }
     </script>
 </body>
 </html>
