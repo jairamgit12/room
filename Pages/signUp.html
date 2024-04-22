@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="center">
+    <div id="container">
+        <h2>Sign Up</h2>
+        <!-- <form id="signupForm"> -->
+            <input type="text" name="firstName" placeholder="First Name" required>
+            <input type="text" name="lastName" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email address" required>
+            <input type="password" name="password" placeholder="New password" required>
+            <label for="dob">Date of birth:</label>
+            <input type="date" name="dob" required>
+            <label for="gender">Gender:</label>
+            <label>
+                Male
+                <input type="radio" name="gender" value="male" />
+            </label>
+            <label>
+                Female
+                <input type="radio" name="gender" value="female" />
+            </label>
+            <!-- <button type="submit">Sign Up</button> -->
+            <button id="alert">Sign Up</button>
+        <!-- </form> -->
+    </div>
+    </div>
+    <script>
+        
+        document.getElementById('alert').onclick = function () {
+                alert('Account Created, login with new credentials');
+                window.open('login.html', '_self');
+        };
+        // document.getElementById('signupForm').addEventListener('submit', function (event) {
+        //     event.preventDefault();
+        //     var formData = new FormData(this);
+        //     fetch('/signup', {
+        //         method: 'POST',
+        //         body: formData
+        //     })
+        //     .then(response => response.text())
+        //     .then(data => {
+        //         alert(data);
+        //         window.open('login.html', '_self');
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+        // });
+    </script>
+</body>
+</html>

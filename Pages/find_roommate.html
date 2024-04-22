@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find|Roommate</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="center">
+    <div id="container">
+        <h2>Tell us about your room</h2>
+        <form id="roomForm">
+            <label for="">Where is your room?</label><input type="text" id="location" name="location">
+            <label for="">How much is the room rent?</label><input type="number" id="rent" name="rent">
+            <label for="">How many bedrooms?</label><input type="number" id="bedrooms" name="bedrooms">
+            <label for="">How many bathrooms?</label><input type="number" id="bathrooms" name="bathrooms">
+            <label for="">How many roommates currently?</label><input type="number" name="currentRoommates" id="numRoommates" onclick="updateRoommates()">
+            <label for="">How many vacancies in the room?</label><input type="number" name="vacancies">
+            
+            
+            <label>Upload Images of the room</label>
+            <input type="file" name="roomImages">
+            <label for=""><h3>Current Roommate Details</h3></label>
+            <table id="roommateTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Nationality</th>
+                    <th>College Name</th>
+                    <th>Year</th>
+                    <th>Hobbies</th>
+                    <th>Gender</th>
+                </tr>
+            </table>
+            <!-- <button id="meow">Post</button> -->
+            <button type="submit">Post</button>
+        </form>
+    </div>        
+</div>
+<script>
+    function updateRoommates() {
+        var table = document.getElementById("roommateTable");
+        var numRoommates = document.getElementById("numRoommates").value;
+        var currentRows = table.rows.length - 1;
+        if (numRoommates > 0) {
+            table.style.display='table';
+            if (numRoommates > currentRows) {
+                // Add rows
+                for (var i = currentRows; i < numRoommates; i++) {
+                    var newRow = table.insertRow();
+                    var nameCell = newRow.insertCell();
+                    var ageCell = newRow.insertCell();
+                    var nationalityCell = newRow.insertCell();
+                    var clgCell = newRow.insertCell();
+                    var yearCell = newRow.insertCell();
+                    var hobbiesCell = newRow.insertCell();
+                    var genderCell = newRow.insertCell();
+                    nameCell.innerHTML = "<input type='text' name='name[]'>";
+                    ageCell.innerHTML = "<input type='number' name='designation[]'>";
+                    nationalityCell.innerHTML = "<input type='text' name='country[]'>";
+                    clgCell.innerHTML = "<input type='text' name='work[]'>";
+                    yearCell.innerHTML = "<input type='text' name='role[]'>";
+                    hobbiesCell.innerHTML = "<input type='text' name='hobbies[]'>";
+                    genderCell.innerHTML = "<input type='text' name='gender[]'>";
+                }
+            } else if (numRoommates < currentRows) {
+                // Remove excess rows
+                while (currentRows > numRoommates) {
+                    table.deleteRow(currentRows);
+                    currentRows--;
+                }
+            }
+        } else if (numRoommates < 0) {
+            alert('Negative Value not supported')
+        } else {
+            table.style.display='none';
+        }
+    }
+
+    document.getElementById('roomForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        fetch('http://localhost:8024/api/mobile', {
+            method: 'POST',
+            body: {
+                "id":1,
+                "roomLocation": document.getElementById(location).event.location.value,
+                "roomRent": document.getElementById(rent).event.rent.value,
+                
+            }
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+            window.open('roommate.html', '_self');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+    // document.getElementById('meow').onclick=function (){
+    //     alert("succesfully posted")
+    //     window.open('roommate.html', '_self')
+    // };
+</script>
+</body>
+</html>

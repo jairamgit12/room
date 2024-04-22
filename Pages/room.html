@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #carouselContainer {
+            max-width: 800px;
+            width: 100%;
+            padding: 0 15px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #carouselExampleIndicators .carousel-inner .carousel-item img {
+            max-width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 10%;
+            top: 0;
+            height: 100%;
+            background: transparent;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 0.15s ease;
+        }
+
+        .carousel-control-prev {
+            left: 0;
+        }
+
+        .carousel-control-next {
+            right: 0;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .carousel:hover .carousel-control-prev,
+        .carousel:hover .carousel-control-next {
+            opacity: 1;
+        }
+
+        .button-group {
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            transform: translateY(-50%);
+        }
+
+        .button-group button {
+            margin-bottom: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .button-group-2 {
+            position: absolute;
+            bottom: -55px; /* Adjust the distance from the bottom */
+            max-width: 750px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-group-2 button {
+            margin: 0 5px; /* Adjust the space between buttons */
+            min-width: 80px; /* Ensure minimum width for better visibility */
+            font-size: 16px; /* Reduce font size for better visibility */
+        }
+
+        /* Remove padding for close button */
+        .modal-header .close {
+            padding: 0;
+        }
+
+        @media (max-width: 768px) {
+            .button-group-2 {
+                position: relative;
+                bottom: auto;
+                margin-top: 10px; /* Adjust the distance from the top */
+            }
+
+            .button-group-2 button {
+                width: 60px; /* Reduce button width for smaller screens */
+                height: 40px; /* Maintain button height */
+                font-size: 14px; /* Reduce font size for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="carouselContainer">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href=""><img class="d-block w-100" src="C:\Users\vvija\OneDrive\Desktop\main\Pages\images\1.jpg" alt="First slide"></a>
+              </div>
+              <div class="carousel-item">
+                <a href=""><img class="d-block w-100" src="C:\Users\vvija\OneDrive\Desktop\main\Pages\images\2.jpg" alt="Second slide"></a>
+              </div>
+              <div class="carousel-item">
+                <a href=""><img class="d-block w-100" src="C:\Users\vvija\OneDrive\Desktop\main\Pages\images\3.jpeg" alt="Third slide"></a>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="button-group">
+            <button class="btn btn-primary info-btn" data-toggle="modal" data-target="#infoModal"><i class="fas fa-info"></i></button>
+            <button class="btn btn-primary"><i class="fas fa-envelope"></i></button>
+          </div>
+
+          <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoModalLabel">Usernames Room</h5>
+                        <!-- Remove padding for close button -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Description content goes here -->
+                        <p>Room_Area = </p>
+                        <p>Room Rent = </p>
+                        <p>Number of Bedrooms = </p>
+                        <p>Number of bathrooms = </p>
+                        <p>Number of roommates currently = </p>
+                        
+                
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div> 
+    </div>
+    <div class="button-group-2">
+      <button class="btn btn-primary" id="prevButton"><i class="fas fa-chevron-left"></i> Prev</button>
+      <button class="btn btn-primary" id="nextButton">Next <i class="fas fa-chevron-right"></i></button>
+  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+fetch('https://cors-anywhere.herokuapp.com/http://localhost:8024/api/mobiles')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+
+    </script> 
+      
+   
+</body>
+</html>
+
+

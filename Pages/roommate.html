@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roommates</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #carouselContainer {
+            max-width: 800px;
+            width: 100%;
+            padding: 0 15px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #carouselExampleIndicators .carousel-inner .carousel-item img {
+            max-width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 10%;
+            top: 0;
+            height: 100%;
+            background: transparent;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 0.15s ease;
+        }
+
+        .carousel-control-prev {
+            left: 0;
+        }
+
+        .carousel-control-next {
+            right: 0;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .carousel:hover .carousel-control-prev,
+        .carousel:hover .carousel-control-next {
+            opacity: 1;
+        }
+
+        .button-group {
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            transform: translateY(-50%);
+        }
+
+        .button-group button {
+            margin-bottom: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .button-group-2 {
+            position: absolute;
+            bottom: -55px; /* Adjust the distance from the bottom */
+            max-width: 750px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-group-2 button {
+            margin: 0 5px; /* Adjust the space between buttons */
+            min-width: 80px; /* Ensure minimum width for better visibility */
+            font-size: 16px; /* Reduce font size for better visibility */
+        }
+
+        /* Remove padding for close button */
+        .modal-header .close {
+            padding: 0;
+        }
+
+        @media (max-width: 768px) {
+            .button-group-2 {
+                position: relative;
+                bottom: auto;
+                margin-top: 10px; /* Adjust the distance from the top */
+            }
+
+            .button-group-2 button {
+                width: 60px; /* Reduce button width for smaller screens */
+                height: 40px; /* Maintain button height */
+                font-size: 14px; /* Reduce font size for smaller screens */
+            }
+        }
+        .content-wrapper {
+            position: relative;
+        
+            color: black; /* Text color */
+        }
+
+        .content-wrapper img {
+            width: 100%; /* Make sure the image covers the entire container */
+            height: auto;
+        }
+
+        .text {
+            position: absolute;
+            top: 50%; /* Adjust vertically */
+            left: 50%; /* Adjust horizontally */
+            transform: translate(-50%, -50%); /* Center the text */
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Add shadow to the text for better visibility */
+            /* You can adjust other text properties like font size, color, etc. here */
+        }
+    </style>
+</head>
+<body>
+    <div id="carouselContainer">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="content-wrapper">
+                    <img  class="d-block w-100" src="images/c2.jpg" alt="Background Image">
+                    <div class="text">
+                        <h3>Name: </h3>
+                        <h3>Age: </h3>
+                        <h3>Nationality: </h3>
+                        <h3>College Name: </h3>
+                        
+                    </div>
+              </div>
+            </div>
+          </div>
+
+          
+    <div class="button-group-2">
+      <button class="btn btn-primary" id="prevButton"><i class="fas fa-chevron-left"></i> Prev</button>
+      <button class="btn btn-primary" id="nextButton">Next <i class="fas fa-chevron-right"></i></button>
+  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+</body>
+</html>
+
+

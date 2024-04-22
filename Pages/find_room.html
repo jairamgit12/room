@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find|Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="center">
+        <div id="container">
+            <h3>Tell us about yourself</h3>
+            <!-- <form id="roomForm"> -->
+                <label>What are your hobbies and interests?</label>
+                <input type="text" name="hobbies">
+                <label>Can you cook?</label>
+                <label>
+                    <input type="radio" name="cook" value="yes">
+                    Yes
+                </label>
+                <label>
+                    <input type="radio" name="cook" value="no">
+                    No
+                </label>
+                <label>Which country are you from?</label>
+                <input type="text" name="country">
+                <label>Are you a student or you are employed?</label>
+                <label>
+                    <input type="radio" name="status" value="student" />
+                    Student
+                </label>
+                <label>
+                    <input type="radio" name="status" value="employed" />
+                    Employed
+                </label>
+                <label>What do you do for work or study?</label>
+                <input type="text" name="occupation">
+                <label>What's something you're passionate about?</label>
+                <input type="text" name="passion">
+                <label>Do you have any hidden talents or unusual skills?</label>
+                <input type="text" name="talents">
+                
+                <h3>Room Requirements</h3>
+                <label for="">Where do you want your room?</label><input type="text" name="location">
+                <label for="">How many bedrooms?</label><input type="number" name="bedrooms">
+                <label for="">How many bathrooms?</label><input type="number" name="bathrooms">
+                <label for="">Do you want to share your room?</label>
+                <label>
+                    <input type="radio" name="share" value="yes" />
+                    Yes
+                </label>
+                <label>
+                    <input type="radio" name="share" value="no" />
+                    No
+                </label>
+                <label for="">Which country roommates you prefer?</label><input type="text" name="preferredCountry">
+                <label for="">Which type of roommates you prefer?</label>
+                <label>
+                    <input type="radio" name="preferredStatus" value="student" />
+                    Student
+                </label>
+                <label>
+                    <input type="radio" name="preferredStatus" value="employed" />
+                    Employed
+                </label>
+                <br>
+                <button type="submit" id="bark">Submit</button>
+                <!-- <button type="submit">Submit</button> -->
+            <!-- </form> -->
+        </div>
+    </div>
+    <script>
+        // document.getElementById('roomForm').addEventListener('submit', function (event) {
+        //     event.preventDefault();
+        //     var formData = new FormData(this);
+        //     fetch('/submitRoomRequirements', {
+        //         method: 'POST',
+        //         body: formData
+        //     })
+        //     .then(response => response.text())
+        //     .then(data => {
+        //         alert(data);
+        //         window.open('room.html', '_self');
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+        // });
+        document.getElementById('bark').onclick=function (){
+        alert("succesfully posted")
+        window.open('room.html', '_self')
+        };
+    </script>
+</body>
+</html>
